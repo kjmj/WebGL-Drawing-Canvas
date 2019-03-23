@@ -4,8 +4,6 @@
     <meta charset="utf-8"/>
     <title>WebGL Drawing Canvas</title>
 
-    <input type="file" id="userFile" accept=".dat" autocomplete="off">
-
     <script id="vshader" type="x-shader/x-vertex">
 	attribute vec4 vPosition;
 	attribute vec4 vColor;
@@ -14,7 +12,7 @@
 
 	void main() {
 		gl_Position = projMatrix * vPosition;	// Point position
-  		gl_PointSize = 10.0;		// Point size
+  		gl_PointSize = 3.0;		// Point size
 		fColor = vColor;			// Pass point color to fragment shader
   	}
     </script>
@@ -39,7 +37,14 @@
 
 <body onload="main()">
 
-<canvas id="webgl" width="640" height="400" style="border:1px solid #000000">
+<H1>Project 1 - WebGL Drawing Canvas</H1>
+<h3>Kenneth Morton</h3>
+
+<h2 id="mode">File Mode</h2>
+<p id="modeDescription">You are currently in file mode. Upload a .dat file to draw a picture! Press 'c' to cycle colors, or 'd' to enter drawing mode</p>
+<input type="file" id="fileSelector" accept=".dat" autocomplete="off">
+<h2></h2>
+<canvas id="webgl" width="640" height="480" style="border:1px solid #000000">
     Please use a browser that supports the "canvas" tag.
 </canvas>
 
